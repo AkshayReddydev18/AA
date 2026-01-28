@@ -331,3 +331,32 @@ body {
     font-size: 20px;
   }
 }
+
+/* High Resolution Screens (4K, 8K) */
+@media (min-width: 2500px) {
+  html {
+    font-size: 24px;
+  }
+
+  .glass-card {
+    max-width: 1600px;
+  }
+
+  .photo-section {
+    min-height: 700px;
+  }
+}
+
+@media (min-width: 3800px) {
+  html {
+    font-size: 32px;
+  }
+
+  .glass-card {
+    max-width: 2200px;
+  }
+
+  .photo-section {
+    min-height: 900px;
+  }
+}
