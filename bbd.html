@@ -42,6 +42,12 @@
             <p class="reveal-p">On your special day, I wish all your dreams come true. 💖</p>
           </div>
 
+          <div class="action-section">
+            <button id="add-wish" class="add-btn">
+              <span class="icon">✨</span> Add a Special Wish
+            </button>
+          </div>
+
           <div class="footer-info">
             <div class="credit">Made with <span class="heart-pulse">❤</span> by <span class="author">Engr Shuvo
                 Das</span></div>
@@ -134,6 +140,39 @@
           ease: 'none'
         });
       }
+
+      // Add Wish Button Interaction
+      const addWishBtn = document.getElementById('add-wish');
+      addWishBtn.addEventListener('click', () => {
+        // Extra big confetti burst
+        const count = 200;
+        const defaults = {
+          origin: { y: 0.7 },
+          zIndex: 1000
+        };
+
+        function fire(particleRatio, opts) {
+          confetti(Object.assign({}, defaults, opts, {
+            particleCount: Math.floor(count * particleRatio)
+          }));
+        }
+
+        fire(0.25, { spread: 26, startVelocity: 55 });
+        fire(0.2, { spread: 60 });
+        fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+        fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+        fire(0.1, { spread: 120, startVelocity: 45 });
+
+        // Show a sweet message
+        const originalText = addWishBtn.innerHTML;
+        addWishBtn.innerHTML = "✨ Wish Sent to the Universe!";
+        addWishBtn.style.pointerEvents = "none";
+
+        setTimeout(() => {
+          addWishBtn.innerHTML = originalText;
+          addWishBtn.style.pointerEvents = "auto";
+        }, 3000);
+      });
 
       // Music Toggle
       const musicBtn = document.getElementById('music-toggle');

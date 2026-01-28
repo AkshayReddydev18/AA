@@ -26,6 +26,7 @@
 <body>
 	<!-- Ambient Background -->
 	<div class="ambient-bg">
+		<div class="cursor-light"></div>
 		<div class="orb orb-1"></div>
 		<div class="orb orb-2"></div>
 		<div class="orb orb-3"></div>
@@ -58,8 +59,8 @@
 								<p>On your special day, I just want you to feel how deeply loved and appreciated you
 									truly are. You deserve all the joy in the world, today and always.</p>
 							</div>
-							<p class="signed">With all my love, <br><span class="name">Shuvo</span> <span
-									class="heart-icon">❤</span></p>
+							<p class="signed">With all my love, <br><span class="name" id="signature">Shuvo</span> <span
+									class="heart-icon" id="heart-trigger">❤</span></p>
 						</div>
 					</div>
 				</div>
@@ -100,7 +101,16 @@
 		</div>
 
 		<div class="navigation-hint">
-			<a href="bbd.html" class="next-page-btn">Continue the Surprise <span class="arrow">→</span></a>
+			<div class="divider">
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+			</div>
+			<p class="hint-text">The journey doesn't end here...</p>
+			<a href="bbd.html" class="next-page-btn">
+				<span class="btn-text">Unlock Final Surprise</span>
+				<span class="arrow-circle">→</span>
+			</a>
 		</div>
 	</main>
 
@@ -112,6 +122,21 @@
 		<audio id="bg-music" loop>
 			<source src="./b-home-song.mpeg" type="audio/mpeg">
 		</audio>
+	</div>
+
+	<!-- Final Cinematic Ending Overlay -->
+	<div id="ending-scene">
+		<div class="ending-content">
+			<h2 class="ending-title">To Many More Years Together...</h2>
+			<p class="ending-sub">The journey with you is my favorite adventure.</p>
+			<div class="ending-actions">
+				<a href="bbd.html" class="next-page-btn explore-btn">
+					<span class="btn-text">See Final Surprise</span>
+					<span class="arrow-circle">→</span>
+				</a>
+				<button id="replay-btn" class="secondary-btn">Close Overlay</button>
+			</div>
+		</div>
 	</div>
 
 	<script src="index.js"></script>
